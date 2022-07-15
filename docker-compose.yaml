@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  nuget-server:
+    image: loicsharma/baget:latest
+    container_name: nuget-server
+    ports:
+      - "8081:80"
+    volumes:
+      - ./bagetData/:/var/baget/
+    env_file:
+      - baget.env
+    restart: always
